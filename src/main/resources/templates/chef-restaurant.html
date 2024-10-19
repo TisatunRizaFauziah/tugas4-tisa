@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chef and Food List</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>List Food & Chefnya</h1>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>SIZE</th>
+        <th>CHEF</th>
+      </tr>
+      <tr th:each="chefRestaurant : ${chefRestaurantList}">
+        <td th:text="${chefRestaurant.food.id}"></td>
+        <td th:text="${chefRestaurant.food.name}"></td>
+        <td th:text="${chefRestaurant.food.price}"></td>
+        <td th:text="${chefRestaurant.food.size}"></td>
+        <td th:text="${chefRestaurant.chef.name}"></td>
+      </tr>
+    </table>
+    <button><a href="/list-food">List Food</a></button>
+    <button><a href="/list-chef">List Chef</a></button>
+  </body>
+</html>
